@@ -1,0 +1,17 @@
+name: ⏱️ Kadenz-Test
+
+# Diagnose: misst, wie oft GitHub den Cron in einem FRISCHEN Repo ausfuehrt.
+on:
+  schedule:
+    - cron: '* * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "Tick um `18:29:41` UTC"
